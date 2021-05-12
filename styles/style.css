@@ -17,6 +17,14 @@ body{
     align-items: center;
     justify-content:center;
 }
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    width: 90%;
+    margin: 0 auto;
+}
 .piano{
     margin: 2rem auto;
     display: flex;
@@ -47,6 +55,28 @@ body{
 }
 .black.active {
     background-color: #333;
+}
+.twinkle{
+    background: rgb(70, 87, 243);
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    margin: 0rem auto 1rem;
+    transition: all 0.2s ease-in;
+    box-shadow: 2px 2px 4px #203A43;
+}
+.twinkle:hover{
+    color: rgb(70, 87, 243);
+    background: white;
+}
+.instruction{
+    padding: 2vw;
+    background: rgba(255, 255, 255, 0.452);
+    color: black;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 4px #203A43;
 }
 @media screen and (max-width: 750px) {
     .piano{

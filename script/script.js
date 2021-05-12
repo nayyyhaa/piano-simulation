@@ -5,6 +5,7 @@ const BLACK_KEYS = ['s', 'd', 'g', 'h', 'j'];
 const keys = document.querySelectorAll('.key');
 const whiteKeys = document.querySelectorAll('.key.white');
 const blackKeys = document.querySelectorAll('.key.black');
+const twinkle = document.querySelector(".twinkle");
 
 /*Play on click */
 keys.forEach(key => {
@@ -15,7 +16,7 @@ keys.forEach(key => {
 document.addEventListener("keydown", (e)=>{
     //stop multiple keydown
     if (e.repeat) return;
-    
+
     // console.log(e);  //Keyboard event object with (prop: key = z,x)*/ 
     let key = e.key;
 
@@ -25,6 +26,20 @@ document.addEventListener("keydown", (e)=>{
     if(whiteKeyIndex > -1) play(whiteKeys[whiteKeyIndex]);
     if(blackKeyIndex > -1) play(blackKeys[blackKeyIndex]);
 
+})
+
+/*twinkle key*/
+twinkle.addEventListener("click",() =>{
+    let TWINKLE_KEYS= ['z', 'z', 'b', 'b', 'n', 'n', 'b','-', 'v', 'v','c', 'c', 'x', 'x', 'z'];
+    TWINKLE_KEYS.forEach((key,index) => {
+        setTimeout(() => {
+        let whiteKeyIndex = WHITE_KEYS.indexOf(key);
+        let blackKeyIndex = BLACK_KEYS.indexOf(key);
+        console.log(key,10*index);
+        if(whiteKeyIndex > -1) play(whiteKeys[whiteKeyIndex])
+        if(blackKeyIndex > -1) play(blackKeys[blackKeyIndex]);
+        },300*index);
+    })
 })
 
 function play(key) {
